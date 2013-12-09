@@ -82,14 +82,14 @@ PROJECTNAME=avr
 
 # Avrdude arguments for setting fuses
 # (I use http://www.engbedded.com/cgi-bin/fcx.cgi)
-FUSE_SETTINGS=-U lfuse:w:0xe4:m -U hfuse:w:0x99:m
+FUSE_SETTINGS=-U lfuse:w:0xe4:m -U hfuse:w:0xd1:m
 
 # Source files
 # List C/C++/Assembly source files:
 # (list all files to compile, e.g. 'a.c b.cpp as.S'):
 # Use .cc, .cpp or .C suffix for C++ files, use .S 
 # (NOT .s !!!) for assembly source code files.
-PRJSRC=main.cpp 
+PRJSRC=main.cpp ./avr-cpp-lib/io.cpp ./avr-cpp-lib/lcds.cpp
 
 # additional includes (e.g. -I/path/to/mydir)
 INC=-I./avr-cpp-lib
@@ -99,7 +99,7 @@ LIBS=
 
 # Optimization level, 
 # use s (size opt), 1, 2, 3 or 0 (off)
-OPTLEVEL=0
+OPTLEVEL=3
 
 
 #####      AVR Dude 'writeflash' options       #####
